@@ -37,8 +37,11 @@ def main():
         # You can either save each country's data to a separate sheet
         # or concatenate them into one DataFrame and save to one sheet.
         # Here's an example of saving each to a separate sheet:
+        country_code = list(all_country_dataframes.keys())[0]
+        excel_filename = os.path.join(output_dir, f"locode_{country_code}.xlsx")
 
-        excel_filename = os.path.join(output_dir, "selected_countries_locodes.xlsx")
+
+        #excel_filename = os.path.join(output_dir, "locodes.xlsx") #os.path.join(output_dir, "selected_countries_locodes.xlsx")
         print(f"Attempting to save data to {excel_filename}") # Added print statement
         with pd.ExcelWriter(excel_filename) as writer:
             for country_code, df in all_country_dataframes.items():
