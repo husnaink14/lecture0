@@ -37,6 +37,7 @@ def main():
         # You can either save each country's data to a separate sheet
         # or concatenate them into one DataFrame and save to one sheet.
         # Here's an example of saving each to a separate sheet:
+
         excel_filename = os.path.join(output_dir, "selected_countries_locodes.xlsx")
         print(f"Attempting to save data to {excel_filename}") # Added print statement
         with pd.ExcelWriter(excel_filename) as writer:
